@@ -10,6 +10,12 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    public function interested(){
+        return $this->hasMany('App\Interested');
+    }
+    public function join(){
+        return $this->hasMany('App\Join');
+    }
     /**
      * The attributes that are mass assignable.
      *
