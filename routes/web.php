@@ -31,8 +31,21 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/loginForm', 'AdminController@loginAdmin');
+Route::post('/loginProcess', 'AdminController@loginProcess');
 Route::get('/loginAdmin', 'AdminController@loginAdminView');
+Route::get('/main', 'AdminController@mainView');
+Route::get('/adminHome', 'AdminController@adminHomeView');
+Route::get('/event', 'AdminController@eventFormView');
+Route::post('/addEvent', 'AdminController@addEvent');
+Route::post('/retrieveEvent', 'AdminController@retrieveEvent');
 
+Route::get('/edit/{id}', 'AdminController@takeEventFromDb');
+Route::get('/editForm', 'AdminController@editForm');
+Route::get('/edit', 'AdminController@editEventView');
+Route::post('/editEvent', 'AdminController@editEvent');
+//Route::get('/adminEvent', 'AdminController@adminEventView');
 
+Route::get('/delete/{id}', 'AdminController@confirmForm');
+Route::get('/confirm', 'AdminController@confirmForm');
+Route::post('/deleteEvent', 'AdminController@deleteEvent');
 ?>

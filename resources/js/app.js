@@ -8,6 +8,14 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+
+// Require dependencies
+//var Vue = require('vue');
+var VueCookie = require('vue-cookie');
+// Tell Vue to use the plugin
+Vue.use(VueCookie);
+
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -19,7 +27,14 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
+import AdminPanel from './components/AdminPanel.vue'
 import LoginAdmin from './components/LoginAdmin.vue'
+import AddEvent from './components/AddEvent.vue'
+//import MainContent from './components/MainContent.vue'
+import EditEvent from './components/EditEvent.vue'
+import EditForm from './components/EditForm.vue'
+import ConfirmForm from './components/ConfirmForm.vue'
+
 Vue.component('Root', require('./components/Root.vue').default);
 
 /**
@@ -31,6 +46,17 @@ Vue.component('Root', require('./components/Root.vue').default);
 const app = new Vue({
     el: '#app',
     components: {
-       LoginAdmin: LoginAdmin
+        AdminPanel: AdminPanel,
+        LoginAdmin: LoginAdmin,
+        AddEvent: AddEvent,
+        //MainContent: MainContent,
+        EditEvent: EditEvent,
+        EditForm: EditForm,
+        ConfirmForm: ConfirmForm
     }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, {});
+  });

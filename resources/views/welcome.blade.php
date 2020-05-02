@@ -3,13 +3,22 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>MVP</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords"
+            content="Myanmar, Buddhist, Temple, Religion, Social, Network, Community, Post, Event, Announvement">
+        <meta name="description" content="A user friendly community website for Myanmar People">
+        <meta name="author" content="Than, Than Sint">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>MBT</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Styles -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        {{-- <link href="/css/style.css" rel="stylesheet"> --}}
+
         <style>
             html, body {
                 background-color: #fff;
@@ -106,5 +115,6 @@
                 </div> --}}
             </div>
         </div>
+        {{-- <script src="/node_modules/vue-cookie/build/vue-cookie.js'"></script> --}}
     </body>
 </html>

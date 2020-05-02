@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.appAdmin')
 
 @section('content')
 <div class="container">
-   <login-admin />
+   <Edit-Event />
 </div>
 @endsection

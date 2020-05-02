@@ -1,16 +1,21 @@
 <template>
-    <div class="container">
-       <!-- <adminLogin/> -->
+    <div>
+        <Header/>
+        <AdminPanel/>
+        <Footer/>
     </div>
 </template>
 
 <script>
-//import adminLogin from './adminLogin.vue'
-
+import Header from './Header.vue'
+import Footer from './Footer.vue'
+import AdminPanel from './AdminPanel.vue'
     export default {
         name: 'Root',
         components: {
-           //adminLogin
+            Header,
+            Footer,
+            AdminPanel
         }
     }
 </script>
