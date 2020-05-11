@@ -8,10 +8,9 @@ use Auth;
 class AdminController extends Controller
 {
     public function loginProcess(Request $request) {
-
         // error_log($request);
         $results = \App\Admin::where('name', $request->name)->where('email', $request->email)->where('password', $request->password)->get();
-        // error_log($results);
+
         if (sizeOf($results)>0) {
             return response()->json(['message'=> "Successfully Login"]);
         }else {
@@ -24,6 +23,7 @@ class AdminController extends Controller
     public function mainView() {
         return view('main');
     }
+
     public function adminHomeView() {
         return view('adminHome');
     }
@@ -44,10 +44,11 @@ class AdminController extends Controller
     }
     public function retrieveEvent(Request $request) {
         $events = \App\Event::orderBy('created_at', 'DESC')->get();
+        //$events = \App\Event::orderBy('created_at', 'DESC')->paginate(2);
         return response()->json(['events'=> $events]);
     }
     public function editEventView() {
-        return view('edit');
+        return view('editEventView');
     }
     public function takeEventFromDb(Request $request) {
         $event = \App\Event::find($request->id);
@@ -56,7 +57,7 @@ class AdminController extends Controller
     }
 
     public function editEvent(Request $request) {
-        error_log($request->id);
+        //error_log($request->id);
         $event = \App\Event::find($request->id);
         $event->title = $request->title;
         $event->event_time = $request->time;
@@ -70,10 +71,62 @@ class AdminController extends Controller
         \App\Event::destroy($request->id);
         return response()->json(['message'=> "Delete Successful"]);
     }
-    public function confirmForm(Request $request) {
-        return view('confirm', ['id'=> $request->id]);
+    public function confirmEventForm(Request $request) {
+        return view('confirmEventForm', ['id'=> $request->id]);
     }
     // public function adminEventView() {
     //     return view('adminEvent');
+    // }
+    public function announcementFormView() {
+        return view('announcement');
+    }
+    public function addAnnouncement(Request $request) {
+        $announcement =new \App\Announcement;
+        $announcement->title = $request->title;
+        $announcement->content = $request->content;
+        $announcement->announcement_date = $request->date;
+        $announcement->announcement_time = $request->time;
+        $announcement->location = $request->location;
+        $announcement->save();
+        return response()->json(['message'=> "Successful"]);
+    }
+    public function retrieveAnnouncement(Request $request) {
+        $announcements = \App\Announcement::orderBy('created_at', 'DESC')->get();
+        // $interests = \App\Interested::orderBy('created_at', 'DESC')->get();
+        // $joins = \App\Join::orderBy('created_at', 'DESC')->get();
+        // $currentuserid = Auth::id();
+        // error_log(Auth::id());
+        //$announcements = \App\Announcement::orderBy('created_at', 'DESC')->paginate(2);
+
+        return response()->json(['announcements'=> $announcements]);
+    }
+    public function takeAnnouncementFromDb(Request $request) {
+        $announcement = \App\Announcement::find($request->id);
+        // error_log($event->date);
+        return view('editAnnouncementForm', ['id'=> $announcement->id, 'title'=> $announcement->title, 'date'=>$announcement->announcement_date, 'time'=>$announcement->announcement_time,'location'=>$announcement->location,'content'=>$announcement->content]);
+    }
+    public function editAnnouncementView() {
+        return view('editAnnouncementView');
+    }
+    public function editAnnouncement(Request $request) {
+        error_log($request->id);
+        $announcement = \App\Announcement::find($request->id);
+        $announcement->title = $request->title;
+        $announcement->announcement_time = $request->time;
+        $announcement->announcement_date = $request->date;
+        $announcement->location = $request->location;
+        $announcement->content = $request->content;
+        $announcement->save();
+        return response()->json(['message'=> "Edit Success"]);
+    }
+    public function deleteAnnouncement(Request $request) {
+        \App\Announcement::destroy($request->id);
+        return response()->json(['message'=> "Delete Successful"]);
+    }
+    public function confirmAnnouncementForm(Request $request) {
+        return view('confirmAnnouncementForm', ['id'=> $request->id]);
+    }
+    // public function adminAnnouncement() {
+    //     return view('adminAnnouncement');
     // }
 }

@@ -35,17 +35,46 @@ Route::post('/loginProcess', 'AdminController@loginProcess');
 Route::get('/loginAdmin', 'AdminController@loginAdminView');
 Route::get('/main', 'AdminController@mainView');
 Route::get('/adminHome', 'AdminController@adminHomeView');
+Route::get('/adminAnnouncement', 'AdminController@adminAnnouncement');
+
 Route::get('/event', 'AdminController@eventFormView');
 Route::post('/addEvent', 'AdminController@addEvent');
 Route::post('/retrieveEvent', 'AdminController@retrieveEvent');
 
-Route::get('/edit/{id}', 'AdminController@takeEventFromDb');
+Route::get('/editingEvent/{id}', 'AdminController@takeEventFromDb');
 Route::get('/editForm', 'AdminController@editForm');
-Route::get('/edit', 'AdminController@editEventView');
+Route::get('/editEvventView', 'AdminController@editEventView');
 Route::post('/editEvent', 'AdminController@editEvent');
-//Route::get('/adminEvent', 'AdminController@adminEventView');
 
-Route::get('/delete/{id}', 'AdminController@confirmForm');
-Route::get('/confirm', 'AdminController@confirmForm');
+Route::get('/deletingEvent/{id}', 'AdminController@confirmEventForm');
+Route::get('/confirmEventForm', 'AdminController@confirmEventForm');
 Route::post('/deleteEvent', 'AdminController@deleteEvent');
+
+Route::get('/announcement', 'AdminController@announcementFormView');
+Route::post('/addAnnouncement', 'AdminController@addAnnouncement');
+
+Route::post('/retrieveAnnouncement', 'AdminController@retrieveAnnouncement');
+Route::get('/editingAnnouncement/{id}', 'AdminController@takeAnnouncementFromDb');
+Route::get('/editAnnouncementForm', 'AdminController@editAnnouncementForm');
+Route::get('/editAnnouncementView', 'AdminController@editAnnouncementView');
+Route::post('/editAnnouncement', 'AdminController@editAnnouncement');
+
+Route::post('/userRetrieveAnnouncement', 'UserController@userRetrieveAnnouncement');
+
+Route::get('/deletingAnnouncement/{id}', 'AdminController@confirmAnnouncementForm');
+Route::get('/confirmAnnouncementForm', 'AdminController@confirmAnnouncementForm');
+Route::post('/deleteAnnouncement', 'AdminController@deleteAnnouncement');
+
+Route::get('/userAbout', 'UserController@userAboutView');
+Route::get('/userEvent', 'UserController@userEventView');
+Route::get('/userAnnouncement', 'UserController@userAnnouncementView');
+
+Route::post('/getForInteresting', 'UserController@getForInteresting');
+Route::post('/interestedCountPlus', 'UserController@interestedCountPlus');
+Route::post('/interestedCountMinus', 'UserController@interestedCountMinus');
+
+Route::post('/getForGoing', 'UserController@getForGoing');
+Route::post('/goingCountPlus', 'UserController@goingCountPlus');
+Route::post('/goingCountMinus', 'UserController@goingCountMinus');
+
 ?>

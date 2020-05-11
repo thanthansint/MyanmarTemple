@@ -2,6 +2,6 @@
 
 @section('content')
 <div>
-    <Admin-Panel-Event/>
+    <Add-Announcement/>
 </div>
 @endsection

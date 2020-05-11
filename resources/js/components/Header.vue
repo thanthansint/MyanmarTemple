@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div id="banner1"z>
+        <div id="banner1">
             <div class="row" id="banner2">
                 <div class="col s2 m3 l3">
                     <img class="responsive-img" id="flag" src="/image/flag.png" alt="buddhist flag">
@@ -16,15 +16,15 @@
         <div class="row col s12 m12 l12 xl12">
             <img class="responsive-img" id="background-image" src="/image/shwedagon_night.jpg" alt="shwedagon pagoda">
         </div>
-        <div class="menuBar row center-align">
+        <!-- <div class="menuBar row center-align">
             <nav>
                 <div class="nav-wrapper blue darken-4">
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="lefft hide-on-med-and-down">
-                    <li class="col m3 l3"><a href="#">ABOUT</a></li>
-                    <li class="col m3 l3"><a href="/main">EVENTS</a></li>
-                    <li class="col m3 l3"><a href="#">ANNOUNCEMENTS</a></li>
-                    <li class="col m3 l3"><a href="#">LOCATION</a></li>
+                    <li class="col m3 l3"><a href="#toAbout" class="menu-color">ABOUT</a></li>
+                    <li class="col m3 l3"><a href="#toEvent" class="menu-color">EVENTS</a></li>
+                    <li class="col m3 l3"><a href="#toAnnouncement" class="menu-color">ANNOUNCEMENTS</a></li>
+                    <li class="col m3 l3"><a href="#toLocation" class="menu-color">LOCATION</a></li>
                 </ul>
                 </div>
             </nav>
@@ -34,7 +34,7 @@
                 <li><a href="#">ANNOUNCEMENTS</a></li>
                 <li><a href="#">LOCATION</a></li>
             </ul>
-        </div>
+        </div> -->
     </div>
 </template>
 <script>
@@ -56,6 +56,9 @@ export default {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+.menu-color {
+    color: yellow;
 }
 #banner1 {
     border: 10px double red;

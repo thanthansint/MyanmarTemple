@@ -15,6 +15,8 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
         <!-- Styles -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         {{-- <link href="/css/style.css" rel="stylesheet"> --}}
@@ -60,7 +62,7 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 74px;
             }
 
             .links > a {
@@ -77,12 +79,20 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            .logo-set {
+                margin-top: 30px;
+            }
+            .logo {
+
+                width: 250;
+                height: 100;
+            }
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div class="flex-center full-height">
             @if (Route::has('login'))
-                <div class="top-left links">
+                <div class="top-left position-ref links">
                     <a href="/loginAdmin">Admin Login</a>
                 </div>
                 <div class="top-right links">
@@ -99,22 +109,11 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    Myanmar Buddhist Temple
+                <div class="logo-set">
+                    <p class="title">Myanmar Buddhist Temple</p>
+                    <img class="logo" src="/image/kayawait.jpg" alt="pagoda logo">
                 </div>
-
-                {{-- <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div> --}}
             </div>
         </div>
-        {{-- <script src="/node_modules/vue-cookie/build/vue-cookie.js'"></script> --}}
     </body>
 </html>

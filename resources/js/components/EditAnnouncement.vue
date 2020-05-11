@@ -1,19 +1,19 @@
 <template>
     <div class="row container">
         <div class="col s12">
-            <h3 class="blue-text text-darken-4">Create Event</h3>
-            <EditForm />
-            <!-- <EditForm @editingEvent="myEditEvent" /> -->
+            <h3 class="blue-text text-darken-4">Create Announcement</h3>
+            <EditAnnouncementForm />
+            <!-- <EditAnnouncementForm @editingAnnouncement="myEditAnnouncement" /> -->
         </div>
     </div>
 </template>
 <script>
-import EditForm from './EditForm.vue'
+import EditAnnouncementForm from './EditAnnouncementForm.vue'
 
 export default {
-    name: 'EditEvent',
+    name: 'EditAnnouncement',
     components: {
-        EditForm
+        EditAnnouncementForm
     },
     data: function() {
         return {
@@ -24,9 +24,9 @@ export default {
             location: '',
             content: ''
         }
-    },
+    }
     // methods: {
-    //     myEditEvent: function(id, title, date, time, location, content){
+    //     myEditAnnouncement: function(id, title, date, time, location, content){
 
     //         this.id= id;
     //         this.title= title;
@@ -36,7 +36,7 @@ export default {
     //         this.content= content;
 
     //     }
-    // }
+    //}
 }
 </script>
 <style scoped>

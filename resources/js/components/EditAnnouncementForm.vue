@@ -19,7 +19,7 @@
 </template>
 <script>
 export default {
-    name: 'EditForm',
+    name: 'EditAnnouncementForm',
     props: {
         id: String,
         title: String,
@@ -38,9 +38,6 @@ export default {
         newcontent: this.content,
         errors: []
         }
-    },
-    mounted: function() {
-        // this.$root.$on('edit',this.myEdit);
     },
     methods: {
         checkForm: function (e) {
@@ -69,7 +66,7 @@ export default {
             e.preventDefault();
         },
         edit: function() {
-            axios.post("/editEvent", {
+            axios.post("/editAnnouncement", {
                 id: this.newid,
                 title: this.newtitle,
                 date: this.newdate,

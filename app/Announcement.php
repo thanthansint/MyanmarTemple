@@ -11,4 +11,10 @@ class Announcement extends Model
     public function admin(){
         return $this->belongsTo('App\Admin');
     }
+    public function interested(){
+        return $this->hasMany('App\Interested');
+    }
+    public function join(){
+        return $this->hasMany('App\Join');
+    }
 }

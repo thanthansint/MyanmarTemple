@@ -2,6 +2,6 @@
 
 @section('content')
 <div class="container">
-<Confirm-Form id="{{$id}}" />
+<Confirm-Event-Form id="{{$id}}" />
 </div>
 @endsection

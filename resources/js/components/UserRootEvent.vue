@@ -2,8 +2,7 @@
     <div>
         <Header />
         <About />
-        <AdminPanelEvent />
-        <AdminPanelAnnouncement />
+        <UserPanelEvent/>
         <Footer/>
     </div>
 </template>
@@ -12,16 +11,14 @@
 import Header from './Header.vue'
 import About from './About.vue'
 import Footer from './Footer.vue'
-import AdminPanelEvent from './AdminPanelEvent.vue'
-import AdminPanelAnnouncement from './AdminPanelAnnouncement.vue'
+import UserPanelEvent from './UserPanelEvent.vue'
 
     export default {
-        name: 'Root',
+        name: 'UserRootEvent',
         components: {
             Header,
             About,
-            AdminPanelEvent,
-            AdminPanelAnnouncement,
+            UserPanelEvent,
             Footer
         }
     }

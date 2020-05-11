@@ -27,13 +27,25 @@ Vue.use(VueCookie);
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-import AdminPanel from './components/AdminPanel.vue'
+import AdminPanelEvent from './components/AdminPanelEvent.vue'
 import LoginAdmin from './components/LoginAdmin.vue'
 import AddEvent from './components/AddEvent.vue'
-//import MainContent from './components/MainContent.vue'
+import UserPanelEvent from './components/UserPanelEvent.vue'
 import EditEvent from './components/EditEvent.vue'
 import EditForm from './components/EditForm.vue'
-import ConfirmForm from './components/ConfirmForm.vue'
+import ConfirmEventForm from './components/ConfirmEventForm.vue'
+
+import AdminPanelAnnouncement from './components/AdminPanelAnnouncement.vue'
+import AddAnnouncement from './components/AddAnnouncement.vue'
+import EditAnnouncement from './components/EditAnnouncement.vue'
+import EditAnnouncementForm from './components/EditAnnouncementForm.vue'
+import ConfirmAnnouncementForm from './components/ConfirmAnnouncementForm.vue'
+import Location from './components/Location.vue'
+import About from './components/About.vue'
+
+import UserRootAbout from './components/UserRootAbout.vue'
+import UserRootEvent from './components/UserRootEvent.vue'
+import UserRootAnnouncement from './components/UserRootAnnouncement.vue'
 
 Vue.component('Root', require('./components/Root.vue').default);
 
@@ -46,13 +58,25 @@ Vue.component('Root', require('./components/Root.vue').default);
 const app = new Vue({
     el: '#app',
     components: {
-        AdminPanel: AdminPanel,
+        About: About,
+        AdminPanelEvent: AdminPanelEvent,
         LoginAdmin: LoginAdmin,
         AddEvent: AddEvent,
-        //MainContent: MainContent,
+        UserPanelEvent: UserPanelEvent,
         EditEvent: EditEvent,
         EditForm: EditForm,
-        ConfirmForm: ConfirmForm
+        ConfirmEventForm: ConfirmEventForm,
+
+        AdminPanelAnnouncement: AdminPanelAnnouncement,
+        AddAnnouncement: AddAnnouncement,
+        EditAnnouncement: EditAnnouncement,
+        EditAnnouncementForm: EditAnnouncementForm,
+        ConfirmAnnouncementForm: ConfirmAnnouncementForm,
+        Location: Location,
+        UserRootAnnouncement: UserRootAnnouncement,
+        UserRootEvent: UserRootEvent,
+        UserRootAbout: UserRootAbout
+
     }
 });
 

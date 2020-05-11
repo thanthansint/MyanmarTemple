@@ -11,7 +11,7 @@ export default {
 <style scoped>
     .footer {
         position: relative;
-        top: 200vh;
+        top: 120vh;
         left: 5vw;
         width: 90vw;
         height : 15vh;

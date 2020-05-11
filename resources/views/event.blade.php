@@ -2,6 +2,6 @@
 
 @section('content')
 <div>
-    <Add-Event/>
+    <Add-Event />
 </div>
 @endsection

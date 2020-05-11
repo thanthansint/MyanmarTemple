@@ -1,22 +1,19 @@
 <template>
     <div class="row container">
         <div class="col s12">
-            <h3 class="blue-text text-darken-4">Create Event</h3>
-            <EventForm @addEvent="myAddEvent"/>
+            <h3 class="blue-text text-darken-4">Announcement Form</h3>
+            <AnnouncementForm @addAnnouncement="myAddAnnouncement"/>
         </div>
     </div>
 </template>
 <script>
-import EventForm from './EventForm.vue'
+import AnnouncementForm from './AnnouncementForm.vue'
 
 export default {
-    name: 'AddEvent',
+    name: 'AddAnnouncement',
     components: {
-        EventForm
+        AnnouncementForm
     },
-    // props: {
-    //     num: Number
-    // },
     data: function() {
         return {
             title: '',
@@ -28,13 +25,13 @@ export default {
         }
     },
     methods: {
-        myAddEvent: function(title, date, time, location, content){
+        myAddAnnouncement: function(title, date, time, location, content){
             this.title= title;
             this.date= date;
             this.time= time;
             this.location= location;
             this.content= content;
-            axios.post("/addEvent", {
+            axios.post("/addAnnouncement", {
                 title: title,
                 date: date,
                 time: time,
@@ -44,12 +41,12 @@ export default {
             .then(
                 response => {
                     console.log(response.data.message);
-                    if (response.data.message == 'Successful-Event') {
+                    if (response.data.message == 'Successful') {
                         window.location = "/main";
-                        console.log("Event Success");
+                        console.log("Announcement Success");
                     } else {
                         window.location = "/adminHome";
-                        console.log("Event Fail");
+                        console.log("Announcement Fail");
                     }
                 })
             .catch( error => {

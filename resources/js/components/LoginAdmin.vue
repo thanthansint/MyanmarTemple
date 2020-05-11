@@ -24,16 +24,17 @@ export default {
                     this.$cookie.set('adminCookie', 'than', 1);
 
                     if (response.data.message == 'Successfully Login') {
+
                         window.location = "/adminHome";
                         console.log("login work");
                     } else {
-                        //window.location = "/"
+                        window.location = "/"
                         console.log("login fail");
                     }
                 })
             .catch( error => {
                     console.log(error.response);
-                   // window.location = "/"
+                    window.location = "/"
                 });
         }
     }

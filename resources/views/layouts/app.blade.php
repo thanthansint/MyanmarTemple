@@ -70,6 +70,9 @@
                                     <form id="logout-form" action="/logout" method="POST" style="display: none;">
                                         @csrf
                                     </form>
+                                    <a class="dropdown-item" href="/userAbout">About</a>
+                                    <a class="dropdown-item" href="/userEvent">Events</a>
+                                    <a class="dropdown-item" href="/userAnnouncement">Announcements</a>
                                 </div>
                             </li>
                         @endguest
@@ -77,10 +80,10 @@
                 </div>
             </div>
         </nav>
+        @yield('content')
+        {{-- <main class="py-4">
 
-        <main class="py-4">
-            @yield('content')
-        </main>
+        </main> --}}
     </div>
 </body>
 </html>

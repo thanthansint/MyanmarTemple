@@ -13,7 +13,7 @@
 </template>
 <script>
 export default {
-    name: 'ConfirmForm',
+    name: 'ConfirmEventForm',
     props: {
         id: String
     },

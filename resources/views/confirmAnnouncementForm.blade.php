@@ -1,7 +1,7 @@
 @extends('layouts.appAdmin')
 
 @section('content')
-<div>
-    <Admin-Panel-Event/>
+<div class="container">
+<Confirm-Announcement-Form id="{{$id}}" />
 </div>
 @endsection
