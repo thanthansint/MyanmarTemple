@@ -58,4 +58,10 @@ export default {
     border: 1px solid red;
     border-radius: 8px;
 }
+@media screen and (max-width: 600px) {
+}
+@media screen and (min-width: 601px) and (max-width: 992px) {
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+}
 </style>

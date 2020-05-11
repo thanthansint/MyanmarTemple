@@ -1,9 +1,9 @@
 <template>
-    <div class="container" id="frame-size">
+    <div class="container" >
         <div id="toAnnouncement" class="row">
-            <span class="green-text text-darken-4 pre">Upcoming Avtivities</span>
-            <a href="#toEvent"><i class="small material-icons up">arrow_upward</i></a>
-            <a href="#toLocation"><i class="small material-icons down">arrow_downward</i></a>
+            <span class="green-text text-darken-4 prev">Upcoming Avtivities</span>
+            <a href="#toEvent"><i class="small material-icons upward">arrow_upward</i></a>
+            <a href="#toLocation"><i class="small material-icons downward">arrow_downward</i></a>
         </div>
         <div class="card announcement-frame" v-if="!announcements.length">
             <p class="heading center-align">No Announcement !!!</p>
@@ -12,23 +12,23 @@
 
             <div class="row center-align">
                 <div class="col s8 m8 l8 xl8">
-                    <p class="heading">{{announcement.title}}</p>
+                    <p class="headingA">{{announcement.title}}</p>
                 </div>
-                <div class="col s2 m2 l2 xl2 but-setting">
-                    <button v-on:click="editing(announcement.id)" class="pink darken-4 white-text btn-small butt-corner">Edit</button>
-                    <button v-on:click="deleting(announcement.id)" class="pink darken-4 white-text btn-small butt-corner">Delete</button>
+                <div class="col s2 m2 l2 xl2 button-setting">
+                    <button v-on:click="editing(announcement.id)" class="pink darken-4 white-text btn-small button-corner">Edit</button>
+                    <button v-on:click="deleting(announcement.id)" class="pink darken-4 white-text btn-small button-corner">Delete</button>
                 </div>
             </div>
-            <div class="time">
-                <span class="space">Time:</span><span>{{announcement.announcement_time}}</span>
+            <div class="timeA">
+                <span class="spaceA">Time:</span><span>{{announcement.announcement_time}}</span>
             </div>
-            <div class="time">
-                <span class="space">Date:</span><span>{{announcement.announcement_date}}</span>
+            <div class="timeA">
+                <span class="spaceA">Date:</span><span>{{announcement.announcement_date}}</span>
             </div>
-            <div class="time">
-                <span class="space">Loation:</span><span>{{announcement.location}}</span>
+            <div class="timeA">
+                <span class="spaceA">Loation:</span><span>{{announcement.location}}</span>
             </div>
-            <div class="content">
+            <div class="contentA text-justification">
                 <p>{{announcement.content}}</p>
             </div>
             <!-- <div>
@@ -84,17 +84,12 @@ export default {
 html {
   scroll-behavior: smooth;
 }
-#frame-size {
-    width: 90vw;
-    height: auto;
-    @include position-setting(relative, 110vh, 1vw);
-}
 .announcement-frame{
     border: 2px solid blue;
     border-radius: 8px;
     background-color: #b9f6ca;
 }
-.heading{
+.headingA{
     font-size: 25px;
     padding: 25px;
     padding-left: 30px;
@@ -103,23 +98,27 @@ html {
     text-decoration: none;
     text-transform: uppercase;
 }
-.but-setting {
+.button-setting {
     margin-top: 30px;
     font-size: 25px;
 }
-.butt-corner {
+.button-corner {
     border: 1px solid red;
     border-radius: 8px;
 }
-.time{
+.timeA{
     color: blue;
     font-size: 20px;
     padding: 10px 25px;
 }
-.space{
+.spaceA{
     padding: 0 25px;
 }
-.content{
+.text-justification {
+    text-align: justify;
+    text-justify: inter-word;
+}
+.contentA{
     font-size: 20px;
     padding-left: 25px;
     padding-top: 30px;
@@ -128,7 +127,7 @@ html {
 .setting{
     padding-top: 20px;
 }
-.pre {
+.prev {
     margin-top: 30px;
     font-size: 30px;
     font-weight: 1000;
@@ -136,15 +135,63 @@ html {
     text-decoration: none;
     text-transform: uppercase;
 }
-.up{
+.upward{
     margin-top: 25px;
     font-size: 20px;
     padding: 35px 0;
     margin-left: 34vw;
 }
-.down {
+.downward {
     margin-top: 25px;
     font-size: 20px;
     padding: 35px 0;
+}
+@media screen and (max-width: 600px) {
+.headingA{
+    font-size: 20px;
+}
+.prev {
+    margin-top: 25px;
+    font-size: 20px;
+}
+.timeA{
+    color: blue;
+    font-size: 18px;
+    padding: 10px 25px;
+}
+.spaceA{
+    padding: 0 25px;
+}
+.contentA{
+    font-size: 18px;
+    padding-left: 25px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+}
+@media screen and (min-width: 601px) and (max-width: 992px) {
+.headingA{
+    font-size: 23px;
+}
+.prev {
+    margin-top: 23px;
+    font-size: 20px;
+}
+.timeA{
+    color: blue;
+    font-size: 20px;
+    padding: 10px 25px;
+}
+.spaceA{
+    padding: 0 25px;
+}
+.contentA{
+    font-size: 20px;
+    padding-left: 25px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
 }
 </style>

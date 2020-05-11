@@ -1,7 +1,7 @@
 <template>
     <div class="row container">
         <div class="col s12">
-            <h3 class="blue-text text-darken-4">Create Event</h3>
+            <p class="blue-text text-darken-4 create center-align">Create Event</p>
             <EventForm @addEvent="myAddEvent"/>
         </div>
     </div>
@@ -60,6 +60,23 @@ export default {
     }
 }
 </script>
-<style scoped>
-
+<style lang="scss">
+.create {
+    font-size: 30px;
+}
+@media screen and (max-width: 600px) {
+    .create {
+    font-size: 17px;
+    }
+}
+@media screen and (min-width: 601px) and (max-width: 992px) {
+    .create {
+    font-size: 20px;
+    }
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+    .create {
+    font-size: 25px;
+    }
+}
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div class="footer white-text"><p class="vertical">Copyright: 2010</p></div>
+    <div class="footer white-text center-align"><p>Copyright: 2010</p></div>
 </template>
 
 <script>
@@ -8,20 +8,36 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss">
     .footer {
-        position: relative;
-        top: 120vh;
-        left: 5vw;
-        width: 90vw;
         height : 15vh;
         font-size: 20px;
+        padding-top: 30px;
         background-color: #0D47A1;
-        /* margin-top: 2vh; */
     }
-    .vertical{
-        position: absolute;
-        top: 5vh;
-        left: 35vw;
+
+@media screen and (max-width: 600px) {
+    .footer {
+        height : 15vh;
+        font-size: 15px;
+        padding-top: 40px;
+        background-color: #0D47A1;
     }
+}
+@media screen and (min-width: 601px) and (max-width: 992px) {
+    .footer {
+        height : 15vh;
+        font-size: 20px;
+        padding-top: 55px;
+        background-color: #0D47A1;
+    }
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+    .footer {
+        height : 15vh;
+        font-size: 20px;
+        padding-top: 55px;
+        background-color: #0D47A1;
+    }
+}
 </style>

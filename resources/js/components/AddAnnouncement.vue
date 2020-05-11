@@ -1,7 +1,7 @@
 <template>
     <div class="row container">
         <div class="col s12">
-            <h3 class="blue-text text-darken-4">Announcement Form</h3>
+            <p class="blue-text text-darken-4 center-align createA">Announcement Form</p>
             <AnnouncementForm @addAnnouncement="myAddAnnouncement"/>
         </div>
     </div>
@@ -57,6 +57,23 @@ export default {
     }
 }
 </script>
-<style scoped>
-
+<style lang="scss">
+.createA {
+     font-size: 30px;
+}
+@media screen and (max-width: 600px) {
+    .createA {
+        font-size: 17px;
+    }
+}
+@media screen and (min-width: 601px) and (max-width: 992px) {
+    .createA {
+        font-size: 20px;
+    }
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+    .createA {
+        font-size: 25px;
+    }
+}
 </style>

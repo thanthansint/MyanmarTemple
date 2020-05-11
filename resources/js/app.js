@@ -40,9 +40,7 @@ import AddAnnouncement from './components/AddAnnouncement.vue'
 import EditAnnouncement from './components/EditAnnouncement.vue'
 import EditAnnouncementForm from './components/EditAnnouncementForm.vue'
 import ConfirmAnnouncementForm from './components/ConfirmAnnouncementForm.vue'
-import Location from './components/Location.vue'
 import About from './components/About.vue'
-
 import UserRootAbout from './components/UserRootAbout.vue'
 import UserRootEvent from './components/UserRootEvent.vue'
 import UserRootAnnouncement from './components/UserRootAnnouncement.vue'
@@ -66,17 +64,14 @@ const app = new Vue({
         EditEvent: EditEvent,
         EditForm: EditForm,
         ConfirmEventForm: ConfirmEventForm,
-
         AdminPanelAnnouncement: AdminPanelAnnouncement,
         AddAnnouncement: AddAnnouncement,
         EditAnnouncement: EditAnnouncement,
         EditAnnouncementForm: EditAnnouncementForm,
         ConfirmAnnouncementForm: ConfirmAnnouncementForm,
-        Location: Location,
         UserRootAnnouncement: UserRootAnnouncement,
         UserRootEvent: UserRootEvent,
         UserRootAbout: UserRootAbout
-
     }
 });
 

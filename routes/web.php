@@ -35,7 +35,6 @@ Route::post('/loginProcess', 'AdminController@loginProcess');
 Route::get('/loginAdmin', 'AdminController@loginAdminView');
 Route::get('/main', 'AdminController@mainView');
 Route::get('/adminHome', 'AdminController@adminHomeView');
-Route::get('/adminAnnouncement', 'AdminController@adminAnnouncement');
 
 Route::get('/event', 'AdminController@eventFormView');
 Route::post('/addEvent', 'AdminController@addEvent');

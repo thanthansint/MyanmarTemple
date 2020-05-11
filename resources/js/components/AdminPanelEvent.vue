@@ -1,14 +1,14 @@
 <template>
-    <div class="container" id="frame-size">
+    <div class="container" >
         <div id="toEvent" class="row">
-            <span  class="green-text text-darken-4 pre">Previous Avtivities</span>
-            <a href="#toAbout"><i class="small material-icons up">arrow_upward</i></a>
-            <a href="#toAnnouncement"><i class="small material-icons down">arrow_downward</i></a>
+            <span  class="green-text text-darken-4 preE col s6 m6 l6">Previous Avtivities</span>
+            <a href="#toAbout"><i class="small material-icons upE col s6 m6 l6">arrow_upward</i></a>
+            <a href="#toAnnouncement"><i class="small material-icons downE col s6 m6 l6">arrow_downward</i></a>
         </div>
         <div v-for="event in events" :key="event.id" class="card-panel event-frame">
             <div class="row center-align">
                 <div class="col s8 m8 l8 xl8">
-                    <p class="heading">{{event.title}}</p>
+                    <p class="headingE">{{event.title}}</p>
                 </div>
                 <div class="col s2 m2 l2 xl2 but-setting">
                     <button v-on:click="editing(event.id)" class="blue darken-4 white-text btn-small butt-corner">Edit</button>
@@ -16,16 +16,16 @@
                     <button v-on:click="deleting(event.id)" class="blue darken-4 white-text btn-small butt-corner">Delete</button>
                 </div>
             </div>
-            <div class="time">
-                <span class="space">Time:</span><span>{{event.event_time}}</span>
+            <div class="timeE">
+                <span class="spaceE">Time:</span><span>{{event.event_time}}</span>
             </div>
-            <div class="time">
-                <span class="space">Date:</span><span>{{event.event_date}}</span>
+            <div class="timeE">
+                <span class="spaceE">Date:</span><span>{{event.event_date}}</span>
             </div>
-            <div class="time">
-                <span class="space">Loation:</span><span>{{event.location}}</span>
+            <div class="timeE">
+                <span class="spaceE">Loation:</span><span>{{event.location}}</span>
             </div>
-            <div class="content">
+            <div class="contentE text-justification">
                 <p>{{event.content}}</p>
             </div>
         </div>
@@ -37,7 +37,7 @@
 <script>
 
 export default {
-    name: 'AdminPanel',
+    name: 'AdminPanelEvent',
     data: function() {
         return {
             events: []
@@ -77,18 +77,14 @@ export default {
 html {
   scroll-behavior: smooth;
 }
-.event-item {
-    @include position-setting(absolute, 100vh, null);
-}
-#frame-size {
-    width: 90vw;
-    @include position-setting(relative, 110vh, 1vw);
-}
 .event-frame{
     border: 2px solid red;
     border-radius: 8px;
 }
-.heading{
+.event-item {
+    @include position-setting(absolute, 100vh, null);
+}
+.headingE{
     font-size: 30px;
     padding: 25px;
     padding-left: 25px;
@@ -105,36 +101,101 @@ html {
     border: 1px solid red;
     border-radius: 8px;
 }
-.time{
+.timeE{
     color: blue;
     font-size: 20px;
     padding: 10px 25px;
 }
-.space{
+.spaceE{
     padding: 0 25px;
 }
-.content{
-    font-size: 20px;
-    padding-left: 25px;
+.text-justification {
+    text-align: justify;
+    text-justify: inter-word;
 }
-.pre {
-    font-size: 30px;
+.contentE{
+    font-size: 20px;
+    padding-left: 15px;
+}
+.preE {
+    font-size: 25px;
     font-weight: 1000;
-    margin-top: 25px;
     padding: 25px 0;
     text-decoration: none;
     text-transform: uppercase;
 }
-.up{
+.upE{
     margin-top: 25px;
     font-size: 20px;
-    padding: 25px 0;
+    margin: 25px 0;
     margin-left: 20vw;
 }
-.down {
+.downE {
     margin-top: 25px;
     font-size: 20px;
-    padding: 35px 0;
+    margin: 35px 0;
     //margin-left: 1vw;
+}
+@media screen and (max-width: 600px) {
+.preE {
+    font-size: 20px;
+    margin: 50px 0;
+}
+.headingE{
+    font-size: 20px;
+}
+.timeE{
+    color: blue;
+    font-size: 18px;
+    padding: 10px 25px;
+}
+.spaceE{
+    padding: 0 25px;
+}
+.contentE{
+    font-size: 18px;
+}
+.upE{
+    margin-top: 50px;
+    font-size: 20px;
+    margin-left: 20vw;
+}
+.downE {
+    margin-top: 50px;
+    font-size: 20px;
+    //margin-left: 1vw;
+}
+}
+@media screen and (min-width: 601px) and (max-width: 992px) {
+.preE {
+    font-size: 23px;
+    margin: 50px 0;
+}
+.headingE{
+    font-size: 23px;
+}
+.timeE{
+    color: blue;
+    font-size: 20px;
+    padding: 10px 25px;
+}
+.spaceE{
+    padding: 0 25px;
+}
+.contentE{
+    font-size: 18px;
+}
+.upE{
+    margin-top: 50px;
+    font-size: 20px;
+    margin-left: 20vw;
+}
+.downE {
+    margin-top: 50px;
+    font-size: 20px;
+    //margin-left: 1vw;
+}
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
 }
 </style>

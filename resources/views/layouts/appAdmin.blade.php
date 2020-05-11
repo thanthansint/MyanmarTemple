@@ -31,12 +31,30 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a href="#!" class="brand-logo" id="logo-style">MBT</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger center-color hide-on-med-and-up"><i class="material-icons">menu</i></a>
+                <ul class="sidenav hide-on-med-and-up" id="mobile-demo">
 
+                        <li>
+                            <div>
+                                <a class="center-color" href="/logout"
+                                    onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                </a>
+                                <form id="logout-form" action="/logout" method="POST" >
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="/main">Main</a>
+                            <a href="/event">Create Event</a>
+                            <a href="/announcement">Create Announcement</a>
+                        </li>
+
+                  </ul>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
 
-                    </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">

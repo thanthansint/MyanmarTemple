@@ -18,8 +18,9 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
         <!-- Styles -->
+        <link href="/css/style.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        {{-- <link href="/css/style.css" rel="stylesheet"> --}}
+
 
         <style>
             html, body {
@@ -92,10 +93,10 @@
     <body>
         <div class="flex-center full-height">
             @if (Route::has('login'))
-                <div class="top-left position-ref links">
+                <div class="top-left position-ref links col s12">
                     <a href="/loginAdmin">Admin Login</a>
                 </div>
-                <div class="top-right links">
+                <div class="top-right links col s12">
                     @auth
                         <a href="/home">Home</a>
                     @else
@@ -108,10 +109,10 @@
                 </div>
             @endif
 
-            <div class="content">
-                <div class="logo-set">
-                    <p class="title">Myanmar Buddhist Temple</p>
-                    <img class="logo" src="/image/kayawait.jpg" alt="pagoda logo">
+            <div class="content col s12">
+                <div class="logo-set ">
+                    <p class="welcome-title">Myanmar Buddhist Temple</p>
+                    <img class="logo responsive-img" src="/image/kayawait.jpg" alt="pagoda logo">
                 </div>
             </div>
         </div>

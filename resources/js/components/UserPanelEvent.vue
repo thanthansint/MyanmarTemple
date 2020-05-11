@@ -1,31 +1,32 @@
 <template>
-    <div class="container" id="frame-size">
-        <div class="row">
-            <span class="green-text text-darken-4 pre">Past Avtivities</span>
-            <a href="#toAbout"><i class="small material-icons up">arrow_upward</i></a>
-        </div>
-        <div class="card event-frame" v-if="!events.length">
-            <p class="heading center-align">No Events !!!</p>
+   <div class="container" >
+        <div id="toEvent" class="row">
+            <span  class="green-text text-darken-4 preE col s6 m6 l6">Previous Avtivities</span>
+            <a href="#toAbout"><i class="small material-icons upE col s6 m6 l6">arrow_upward</i></a>
+            <a href="#toAnnouncement"><i class="small material-icons downE col s6 m6 l6">arrow_downward</i></a>
         </div>
         <div v-for="event in events" :key="event.id" class="card-panel event-frame">
             <div class="row center-align">
                 <div class="col s8 m8 l8 xl8">
-                    <p class="heading">{{event.title}}</p>
+                    <p class="headingE">{{event.title}}</p>
                 </div>
             </div>
-            <div class="time">
-                <span class="space">Time:</span><span>{{event.event_time}}</span>
+            <div class="timeE">
+                <span class="spaceE">Time:</span><span>{{event.event_time}}</span>
             </div>
-            <div class="time">
-                <span class="space">Date:</span><span>{{event.event_date}}</span>
+            <div class="timeE">
+                <span class="spaceE">Date:</span><span>{{event.event_date}}</span>
             </div>
-            <div class="time">
-                <span class="space">Loation:</span><span>{{event.location}}</span>
+            <div class="timeE">
+                <span class="spaceE">Loation:</span><span>{{event.location}}</span>
             </div>
-            <div class="section flow-text content">
+            <div class="contentE text-justification">
                 <p>{{event.content}}</p>
             </div>
         </div>
+        <!-- <div>
+            {{events.links()}}
+        </div> -->
     </div>
 </template>
 
@@ -69,16 +70,11 @@ export default {
 .event-item {
     @include position-setting(absolute, 100vh, null);
 }
-#frame-size {
-    width: 90vw;
-    height: auto;
-    @include position-setting(relative, 110vh, 1vw);
-}
 .event-frame{
     border: 2px solid red;
     border-radius: 8px;
 }
-.heading{
+.headingE{
     font-size: 25px;
     padding: 25px;
     padding-left: 30px;
@@ -95,28 +91,61 @@ export default {
     border: 1px solid red;
     border-radius: 8px;
 }
-.time{
+.timeE{
     color: blue;
     font-size: 20px;
     padding: 10px 25px;
 }
-.space{
+.spaceE{
     padding: 0 25px;
 }
-.content{
+.contentE{
     font-size: 20px;
-    padding-left: 25px;
+    padding-left: 15px;
 }
-.pre {
-    font-size: 30px;
+.preE {
+    font-size: 20px;
     font-weight: 1000;
     text-decoration: none;
     text-transform: uppercase;
 }
-.up{
+.upE{
     font-size: 20px;
     padding: 35px 0;
     margin-left: 34vw;
 }
-
+@media screen and (max-width: 600px) {
+.preE {
+    font-size: 20px;
+    margin: 50px 0;
+}
+.headingE{
+    font-size: 17px;
+}
+.timeE{
+    color: blue;
+    font-size: 15px;
+    padding: 10px 15px;
+}
+.spaceE{
+    padding: 0 15px;
+}
+.contentE{
+    font-size: 15px;
+    padding-left: 5px;
+}
+.upE{
+    margin-top: 50px;
+    font-size: 15px;
+    margin-left: 20vw;
+}
+.downE {
+    margin-top: 50px;
+    font-size: 15px;
+}
+}
+@media screen and (min-width: 601px) and (max-width: 992px) {
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+}
 </style>

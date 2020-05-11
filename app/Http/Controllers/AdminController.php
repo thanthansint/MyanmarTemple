@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Auth;
 
 class AdminController extends Controller
 {
     public function loginProcess(Request $request) {
-        // error_log($request);
         $results = \App\Admin::where('name', $request->name)->where('email', $request->email)->where('password', $request->password)->get();
 
         if (sizeOf($results)>0) {
@@ -38,8 +36,6 @@ class AdminController extends Controller
         $event->event_time = $request->time;
         $event->location = $request->location;
         $event->save();
-        // $event = \App\Event::where('title', $request->title)->where('content', $request->content)->where('event_date', $request->date)->where('evnet_time', $request->time)->where('location', $request->location)->get();
-
         return response()->json(['message'=> "Successful-Event"]);
     }
     public function retrieveEvent(Request $request) {
@@ -52,12 +48,10 @@ class AdminController extends Controller
     }
     public function takeEventFromDb(Request $request) {
         $event = \App\Event::find($request->id);
-        // error_log($event->date);
         return view('editForm', ['id'=> $event->id, 'title'=> $event->title, 'date'=>$event->event_date, 'time'=>$event->event_time,'location'=>$event->location,'content'=>$event->content]);
     }
 
     public function editEvent(Request $request) {
-        //error_log($request->id);
         $event = \App\Event::find($request->id);
         $event->title = $request->title;
         $event->event_time = $request->time;
@@ -74,9 +68,6 @@ class AdminController extends Controller
     public function confirmEventForm(Request $request) {
         return view('confirmEventForm', ['id'=> $request->id]);
     }
-    // public function adminEventView() {
-    //     return view('adminEvent');
-    // }
     public function announcementFormView() {
         return view('announcement');
     }
@@ -92,17 +83,11 @@ class AdminController extends Controller
     }
     public function retrieveAnnouncement(Request $request) {
         $announcements = \App\Announcement::orderBy('created_at', 'DESC')->get();
-        // $interests = \App\Interested::orderBy('created_at', 'DESC')->get();
-        // $joins = \App\Join::orderBy('created_at', 'DESC')->get();
-        // $currentuserid = Auth::id();
-        // error_log(Auth::id());
         //$announcements = \App\Announcement::orderBy('created_at', 'DESC')->paginate(2);
-
         return response()->json(['announcements'=> $announcements]);
     }
     public function takeAnnouncementFromDb(Request $request) {
         $announcement = \App\Announcement::find($request->id);
-        // error_log($event->date);
         return view('editAnnouncementForm', ['id'=> $announcement->id, 'title'=> $announcement->title, 'date'=>$announcement->announcement_date, 'time'=>$announcement->announcement_time,'location'=>$announcement->location,'content'=>$announcement->content]);
     }
     public function editAnnouncementView() {
@@ -126,7 +111,4 @@ class AdminController extends Controller
     public function confirmAnnouncementForm(Request $request) {
         return view('confirmAnnouncementForm', ['id'=> $request->id]);
     }
-    // public function adminAnnouncement() {
-    //     return view('adminAnnouncement');
-    // }
 }

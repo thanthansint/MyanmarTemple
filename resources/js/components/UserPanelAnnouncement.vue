@@ -1,43 +1,36 @@
 <template>
-  <div class="container" id="frame-size">
-    <div id="toAnnouncement" class="row">
-      <span class="green-text text-darken-4 pre">Upcoming Avtivities</span>
-      <a href="#toAbout">
-        <i class="small material-icons up">arrow_upward</i>
-      </a>
-    </div>
-    <div class="card announcement-frame" v-if="!announcements.length">
-      <p class="heading center-align">No Announcement !!!</p>
-    </div>
-    <div
-      v-for="announcement in announcements"
-      :key="announcement.id"
-      class="card-panel announcement-frame"
-    >
-      <div class="row center-align">
-        <div class="col s8 m8 l8 xl8">
-          <p class="heading">{{announcement.title}}</p>
+  <div class="container" >
+        <div id="toAnnouncement" class="row">
+            <span class="green-text text-darken-4 prev">Upcoming Avtivities</span>
+            <a href="#toEvent"><i class="small material-icons upward">arrow_upward</i></a>
         </div>
-      </div>
-      <div class="time">
-        <span class="space">Time:</span>
-        <span>{{announcement.announcement_time}}</span>
-      </div>
-      <div class="time">
-        <span class="space">Date:</span>
-        <span>{{announcement.announcement_date}}</span>
-      </div>
-      <div class="time">
-        <span class="space">Loation:</span>
-        <span>{{announcement.location}}</span>
-      </div>
-      <div class="content">
-        <p>{{announcement.content}}</p>
-      </div>
+        <div class="card announcement-frame" v-if="!announcements.length">
+            <p class="heading center-align">No Announcement !!!</p>
+        </div>
+        <div v-for="announcement in announcements" :key="announcement.id" class="card-panel announcement-frame">
+
+            <div class="row center-align">
+                <div class="col s8 m8 l8 xl8">
+                    <p class="headingA">{{announcement.title}}</p>
+                </div>
+            </div>
+            <div class="timeA">
+                <span class="spaceA">Time:</span><span>{{announcement.announcement_time}}</span>
+            </div>
+            <div class="timeA">
+                <span class="spaceA">Date:</span><span>{{announcement.announcement_date}}</span>
+            </div>
+            <div class="timeA">
+                <span class="spaceA">Loation:</span><span>{{announcement.location}}</span>
+            </div>
+            <div class="contentA text-justification">
+                <p>{{announcement.content}}</p>
+            </div>
+
 
       <div class="divider"></div>
       <div class="row setting center-align">
-        <div class="col s6 m6 l6">
+        <div class="col s6 m6 l6 button-set">
           <button
             v-if="isInterested(announcement.id)"
             @click="interesting(announcement.id)"
@@ -63,7 +56,7 @@
 
           <span>{{interestedIncrease=checkInterestedCount(announcement.id)}}</span>
         </div>
-        <div class="col s6 m6 l6">
+        <div class="col s6 m6 l6 button-set">
           <button
             v-if="isGoing(announcement.id)"
             @click="gone(announcement.id)"
@@ -279,9 +272,9 @@ html {
 .announcement-frame {
   border: 2px solid blue;
   border-radius: 8px;
-  background-color: #b9f6ca;
+  background-color: #daf5e2;
 }
-.heading {
+.headingA {
   font-size: 25px;
   padding: 25px;
   padding-left: 30px;
@@ -290,40 +283,95 @@ html {
   text-decoration: none;
   text-transform: uppercase;
 }
-.but-setting {
+.button-setting {
   margin-top: 30px;
   font-size: 25px;
 }
-.butt-corner {
+.button-corner {
   border: 1px solid red;
   border-radius: 8px;
 }
-.time {
+.timeA {
   color: blue;
   font-size: 20px;
   padding: 10px 25px;
 }
-.space {
+.spaceA {
   padding: 0 25px;
 }
-.content {
+.text-justification {
+    text-align: justify;
+    text-justify: inter-word;
+}
+.contentA {
   font-size: 20px;
-  padding-left: 25px;
   padding-top: 30px;
   padding-bottom: 30px;
 }
 .setting {
   padding-top: 20px;
 }
-.pre {
+.prev {
   font-size: 30px;
   font-weight: 1000;
   text-decoration: none;
   text-transform: uppercase;
 }
-.up {
+.upward {
   font-size: 20px;
   padding: 35px 0;
   margin-left: 34vw;
+}
+@media screen and (max-width: 600px) {
+.button-set {
+    margin-bottom: 20px;
+}
+.headingA{
+    font-size: 20px;
+}
+.prev {
+    margin-top: 25px;
+    font-size: 20px;
+}
+.timeA{
+    color: blue;
+    font-size: 18px;
+    padding: 10px 10px;
+}
+.spaceA{
+    padding: 0 10px;
+}
+.contentA{
+    font-size: 18px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+}
+@media screen and (min-width: 601px) and (max-width: 992px) {
+.button-set {
+    margin-bottom: 20px;
+}
+.headingA{
+    font-size: 23px;
+}
+.prev {
+    margin-top: 23px;
+    font-size: 20px;
+}
+.timeA{
+    color: blue;
+    font-size: 20px;
+    padding: 10px 25px;
+}
+.spaceA{
+    padding: 0 25px;
+}
+.contentA{
+    font-size: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
 }
 </style>

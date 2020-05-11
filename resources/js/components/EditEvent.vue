@@ -1,7 +1,7 @@
 <template>
     <div class="row container">
         <div class="col s12">
-            <h3 class="blue-text text-darken-4">Create Event</h3>
+            <p class="blue-text text-darken-4 center-align createE">Create Event</p>
             <EditForm />
             <!-- <EditForm @editingEvent="myEditEvent" /> -->
         </div>
@@ -25,20 +25,25 @@ export default {
             content: ''
         }
     },
-    // methods: {
-    //     myEditEvent: function(id, title, date, time, location, content){
-
-    //         this.id= id;
-    //         this.title= title;
-    //         this.date= date;
-    //         this.time= time;
-    //         this.location= location;
-    //         this.content= content;
-
-    //     }
-    // }
 }
 </script>
-<style scoped>
-
+<style lang="scss">
+.createE {
+    font-size: 30px;
+}
+@media screen and (max-width: 600px) {
+.createE {
+    font-size: 17px;
+}
+}
+@media screen and (min-width: 601px) and (max-width: 992px) {
+.createE {
+    font-size: 20px;
+}
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+.createE {
+    font-size: 25px;
+}
+}
 </style>
