@@ -102,9 +102,11 @@ export default {
 .contentE{
     font-size: 20px;
     padding-left: 15px;
+    margin-top: 20px;
 }
 .preE {
-    font-size: 20px;
+    margin-top: 30px;
+    font-size: 30px;
     font-weight: 1000;
     text-decoration: none;
     text-transform: uppercase;

@@ -134,7 +134,7 @@ html {
   scroll-behavior: smooth;
 }
 #toAbout {
-    padding-top: 37vh;
+    padding-top: 53vh;
 }
 .sidebar {
     @include display-setting(20vw, 2px, solid, red, 6vw, 10vh);

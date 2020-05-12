@@ -44,14 +44,14 @@ export default {
 #banner1 {
     border: 10px double red;
     border-radius: 8px;
-    @include frame-setting(absolute, 15vh, 5vw);
-    @include widthHeight(90vw, 28.5vh);
+    @include frame-setting(absolute, 8vh, 5vw);
+    @include widthHeight(90vw, 18vh);
 }
 #banner2 {
     border: 10px double blue;
     border-radius: 8px;
-    @include widthHeight(92vw, 25vh);
-    @include frame-setting(relative, null, -4vh);
+    @include widthHeight(88vw, 16vh);
+    @include frame-setting(relative, null, 0);
     background-color: #FFFFFF;
 }
 #flag {
@@ -60,12 +60,12 @@ export default {
     @include widthHeight(10vw, auto);
 }
 .title-size{
-    @include widthHeight(70vw, null);
+    @include widthHeight(65vw, null);
 }
 #logo {
     padding-top: 7px;
     float: right;
-    @include widthHeight(10vw, auto);
+    @include widthHeight(9vw, auto);
 }
 .title {
     letter-spacing: .1rem;
@@ -77,11 +77,9 @@ export default {
     text-decoration: none;
 }
 #background-image{
-    @include widthHeight(92vw, 63vh);
-    @include frame-setting(absolute, 33vh, 3vw);
+    @include widthHeight(90vw, 35vh);
+    @include frame-setting(absolute, 20vh, 5vw);
     object-fit: fill;
-    padding-left: 30px;
-    padding-top: 5px;
 }
 .menuBar {
     @include frame-setting(absolute, 107vh, 5vw);

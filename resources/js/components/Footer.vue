@@ -12,7 +12,7 @@ export default {
     .footer {
         height : 15vh;
         font-size: 20px;
-        padding-top: 30px;
+        padding-top: 50px;
         background-color: #0D47A1;
     }
 
